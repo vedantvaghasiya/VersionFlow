@@ -2,12 +2,11 @@ const fs = require("fs");
 const path = require("path");
 
 const GitClient = require("./git/client");
-
+  
 //commands
 const {CatFileCommand} = require("./git/commands");
 
 // You can use print statements as follows for debugging, they'll be visible when running tests.
-console.error("Logs from your program will appear here!");
 
 const gitClient = new GitClient();
 
