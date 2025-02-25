@@ -7,7 +7,8 @@ class CatFileCommand {
         this.flag = flag;
         this.commitSHA = commitSHA;
     }
-  
+    
+
     execute(){
         //  navigate to .git/objects/commitSHA(0...2)
         //  read the file .git/objects/commitSHA(0...2)/commitSHA(2...)
@@ -19,7 +20,8 @@ class CatFileCommand {
   
         switch(flag)
         {
-            case '-p': {
+            case '-p':
+              {
                 const folder = commitSHA.slice(0,2);
                 const file = commitSHA.slice(2);
 
@@ -31,9 +33,9 @@ class CatFileCommand {
                     file
                 );
 
-                if(!fs.existsSync(completePath)){
+                if(!fs.existsSync(completePath))
                     throw new Error(`Not a valid object name ${commitSHA}`);
-                }
+                
 
                 const fileContents = fs.readFileSync(completePath);
 
@@ -42,6 +44,7 @@ class CatFileCommand {
 
                 process.stdout.write(output);
             }
+              
             break;
 
 
