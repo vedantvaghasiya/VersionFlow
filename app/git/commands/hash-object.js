@@ -44,7 +44,7 @@ class HashObjectCommand {
                 "objects",
                 folder
             );
-
+ 
             if(!fs.existsSync(completeFolderPath)) fs.mkdirSync(completeFolderPath); 
 
             const compressedData = zlib.deflateSync(blob);
