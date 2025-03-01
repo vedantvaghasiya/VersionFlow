@@ -35,7 +35,7 @@ function writeFileBlob(currentPath) {
 
 
 class WriteTreeCommand {
-    constructor() { }
+    constructor() {}
 
     execute() {
         // 1 recursive read all the files and dir
@@ -72,7 +72,7 @@ class WriteTreeCommand {
 
             if(dirContents.length === 0 || result.length === 0) return null;
 
-
+ 
 
             const treeData = result.reduce((acc, current) => {
                 const {mode, basename, sha} = current;
@@ -113,9 +113,6 @@ class WriteTreeCommand {
 
        const sha = recursiveCreateTree(process.cwd());
        process.stdout.write(sha);
-
-
-
     }
 }
 
