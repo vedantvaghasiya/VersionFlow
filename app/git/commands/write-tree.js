@@ -4,7 +4,7 @@ const zlib = require('zlib');
 const crypto = require('crypto');
 const { buffer } = require('stream/consumers');
 
-function WriteTreeCommand(currentPath) {
+function writeFileBlob(currentPath) {
     const contents = fs.readFileSync(currentPath);
     const len = contents.length;
 
