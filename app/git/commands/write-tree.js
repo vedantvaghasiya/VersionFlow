@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const zlib = require('zlib');
 const crypto = require('crypto');
-const { buffer } = require('stream/consumers');
 
 function writeFileBlob(currentPath) {
     const contents = fs.readFileSync(currentPath);
@@ -10,7 +9,7 @@ function writeFileBlob(currentPath) {
 
 
     const header = `blob ${len}\0`;
-    const blob = buffer.concat([Buffer.from(header), contents]);
+    const blob = Buffer.concat([Buffer.from(header), contents]);
 
     const hash = crypto.createHash("sha1").update(blob).digest("hex");
 
