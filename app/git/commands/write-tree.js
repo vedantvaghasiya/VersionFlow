@@ -102,7 +102,7 @@ class WriteTreeCommand {
             );
 
 
-            if (!fs.existsSync(completeFolderPath)) fs.mkdirSync(completeFolderPath);
+            if (!fs.existsSync(treeFolderPath)) fs.mkdirSync(treeFolderPath);
 
             const compressed = zlib.deflateSync(tree);
             fs.writeFileSync(path.join(treeFolderPath, file), compressed);
